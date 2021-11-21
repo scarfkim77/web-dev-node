@@ -6,7 +6,7 @@ module.exports = (app) => {
     };
     app.get('/api/profile', getCurrentProfile);
 
-    const editProfile = (req, res) => {
+    const updateCurrentProfile = (req, res) => {
         profile.firstName = req.body.firstName;
         profile.lastName = req.body.lastName;
         profile.bio = req.body.bio;
@@ -15,5 +15,5 @@ module.exports = (app) => {
         profile.dateOfBirth = req.body.dateOfBirth;
         res.json(profile);
     };
-    app.put('/api/edit', editProfile);
+    app.put('/api/edit', updateCurrentProfile);
 };
