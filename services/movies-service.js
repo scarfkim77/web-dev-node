@@ -29,7 +29,6 @@ module.exports = (app) => {
         res.json(movies);
     };
     app.put('/api/movies/:mid', saveMovie);
+
 };
-
-
 

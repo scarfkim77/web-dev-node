@@ -1,7 +1,7 @@
 const model = require('./who-model');
 
-const findAllWho = () => model.find();
+const findWhos = () => model.find();
 
 module.exports = {
-    findAllWho,
+    findWhos,
 };

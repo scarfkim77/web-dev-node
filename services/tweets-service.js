@@ -1,9 +1,7 @@
-const dao = require('../db/tweets/tweet-dao');
-
+const dao = require('../db/tweets/tweets-dao');
 module.exports = (app) => {
     const findAllTweets = (req, res) =>
         dao.findAllTweets().then(tweets => res.json(tweets));
-
     const createTweet = (req, res) => {
         const newTweet = {
             'liked': false,

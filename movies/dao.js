@@ -3,7 +3,7 @@ const model = require('./model');
 const findAllMovies = () => model.find();
 
 const deleteMovie = (id) =>
-    model.deleteOne({_id: id});
+    model.findByIdAndRemove(id);
 
 const createMovie = (movie) =>
     model.create(movie);
@@ -16,9 +16,5 @@ const updateMovie = (id, movie) =>
         {$set: movie});
 
 module.exports = {
-    findAllMovies, deleteMovie, createMovie,
-    findMovieById, updateMovie
+    findAllMovies, deleteMovie, createMovie, findMovieById, updateMovie,
 };
-
-
-
