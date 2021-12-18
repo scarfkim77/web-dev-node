@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/webdev');
 
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
@@ -25,10 +24,5 @@ app.get('/hello', (req, res) => {
 require('./services/movies-service')(app);
 require('./services/tweets-service')(app);
 require('./services/profile-service')(app);
-
-app.listen(process.env.PORT || 4000);
-
 require('./movies/service')(app);
-
-app.listen(4000);
-
+app.listen(process.env.PORT || 4000);
