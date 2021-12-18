@@ -1,4 +1,4 @@
-const dao = require('../db/tweets/tweets-dao');
+const dao = require('../db/tweets/tweet-dao');
 module.exports = (app) => {
     const findAllTweets = (req, res) =>
         dao.findAllTweets().then(tweets => res.json(tweets));
